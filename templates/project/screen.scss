@@ -1,4 +1,24 @@
-// This is where you put the contents of the main stylesheet for the user's project.
-// It should import your sass stylesheets and demonstrate how to use them.
-
+// Include the default settings
 @import 'grund';
+
+
+// Or use it with your own settings
+/*
+$base-font-size: 16;
+$input-color: #eee;
+
+$btn-reqular: #0099ee;
+
+$btn-message: #96ee35;
+$btn-notice: #eece00;
+$btn-alert: #aa372b;
+
+$font-heading: Arial, Helvetica, "Lucida Grande", Verdana, "Gill Sans", sans-serif;
+$font-base: Georgia, "Times New Roman", "Palatino", "Hoefler Text", Baskerville, serif;
+$font-slap: Rockwell, serif;
+$font-mono: Menlo, Courier New, Courier, Mono, monospace;
+
+$base-width: 940px;
+
+@import 'grund/base';
+*/
