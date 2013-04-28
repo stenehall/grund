@@ -1,62 +1,60 @@
 <!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Grund by stenehall</title>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Grund</title>
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <style>
-      .grids [class*="col"] {
-        text-align: center;
-        background: #eee;
-        }
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <link href="stylesheets/styles.css" rel="stylesheet" />
 
-      .sidebar [class*="col"] {
-        background: #eee;
-        }
+  <style>
+    .grids [class*="col"] {
+      text-align: center;
+      background: #00D0FF;
+      }
 
-      .js-nav {
-        position: fixed;
-        top: 10px;
-        right: 10px;
-        margin: 0;
+    .sidebar [class*="col"] {
+      background: #eee;
+      }
+
+    .js-nav {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      margin: 0;
+      padding: 0;
+      }
+
+      .js-nav li {
         padding: 0;
+        width: 10px;
+        height: 10px;
+        background: #ccc;
+        display: inline-block;
+        border: none;
         }
 
-        .js-nav li {
-          padding: 0;
-          width: 10px;
-          height: 10px;
-          background: #ccc;
-          display: inline-block;
-          border: none;
-          }
-
-        .js-nav li.active {
-          background: #000;
-          }
-
-      section + section {
-        display: none;
+      .js-nav li.active {
+        background: #000;
         }
-    </style>
-  </head>
-  <body>
+
+    section + section {
+      display: none;
+      }
+  </style>
+</head>
+<body>
 
   <ul class="js-nav">
     <li id="github" class="active"></li>
     <li id="grids"></li>
+    <li id="sidebar"></li>
     <li id="form"></li>
   </ul>
 
-  <section class="github">
-    <div class="container">
+  <div class="container">
+    <section class="github">
       <div class="row">
         <header class="col-5-2">
           <h2>Github</h2>
@@ -74,23 +72,22 @@
         <section class="col-5-3">
           <h1>This is <a href="http://en.wiktionary.org/wiki/grund#Swedish">grund</a></h1>
 
-<p>My main reason for writing this was to better understand how to write compass modules and how css frameworks work.</p>
-<p>To get it running you simply need to have compass installed and to the following.</p>
-<pre><code>$ cd your_repo_root/repo_name
+        <p>My main reason for writing this was to better understand how to write compass modules and how css frameworks work.</p>
+        <p>To get it running you simply need to have compass installed and to the following.</p>
+        <pre><code>$ cd your_repo_root/repo_name
 $ gem install grund
 $ compass create grund
 </code></pre>
-<p>Add <code>require 'grund'</code> to the newly created grund/config.rb</p>
-<pre><code>$ cd grund
+        <p>Add <code>require 'grund'</code> to the newly created grund/config.rb</p>
+        <pre><code>$ cd grund
 $ compass init --require grund
 </code></pre>
-        </section>
-      </div>
-    </section>
+          </section>
+        </div>
+      </section>
 
-    <section class="grids">
-      <div class="container">
-          <div class="row">
+      <section class="grids">
+        <div class="row">
           <div class="col-5">col-5</div>
           <div class="col-5">col-5</div>
           <div class="col-5">col-5</div>
@@ -126,77 +123,138 @@ $ compass init --require grund
 
           <div class="col-1">col-1</div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="form">
-      <div class="container">
-        <div class="row">
-          <div class="col-5-2">
-            <h3>We have forms!</h3>
+      <section class="sidebar">
+       <div class="row">
+         <div class="col-4">
+           <h5 class="h3">Heading 5</h5>
+
+            <p>VNullam quis risus eget urna mollis ornare vel eu leo. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Donec id elit non  mi porta gravida at eget metus. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nullam id dolor   id nibh ultricies vehicula ut id elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cras mattis consectetur purus sit amet  fermentum.</p>
+
+            <p>VNullam quis risus eget urna mollis ornare vel eu leo. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Donec id elit non  mi porta gravida at eget metus. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nullam id dolor   id nibh ultricies vehicula ut id elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cras mattis consectetur purus sit amet  fermentum.</p>
           </div>
+          <div class="col-4-3">
+            <h1>Heading 1</h1>
+            <p>Vestibulum id ligula porta felis euismod semper. Sed posuere consectetur est at lobortis. Morbi leo risus, porta ac consectetur ac, vestibulum   at eros. Etiam porta sem malesuada magna mollis euismod. Maecenas faucibus mollis interdum. Praesent commodo cursus magna, vel scelerisque nisl   consectetur et.</p>
+            <pre><code>$(document).ready(function () {
+  $('.js-nav li').click(function () {
+    $('.active').removeClass('active');
+    $(this).addClass('active');
+    $('section').hide ();
+    $('.'+$(this).attr('id')).show();
+  });
+});</code></pre>
 
-          <div class="col-5-3">
-            <ul class="messages">
-              <li class="message"><p>Nullam id dolor id nibh ultricies vehicula ut id elit.</p><span>x</span></li>
-              <li class="notice"><p>Praesent commodo cursus magna, vel scelerisque nisl et.</p><span>x</span></li>
-              <li class="alert"><p>Sed posuere consectetur est at lobortis.</p><span>x</span></li>
-            </ul>
-            <form action="/">
-              <label>
-                <span>Text label</span>
-                <input type="text">
-              </label>
-              <label>
-                <span>Select label</span>
-                <select>
-                  <option>Option</option>
-                  <option>Option two</option>
-                </select>
-              </label>
-              <label>
-                <span>Checkbox label</span>
-                <input type="checkbox">
-              </label>
-              <label>
-                <span>Radio label 1</span>
-                <input type="radio" name="radio">
-              </label>
-              <label>
-                <span>Radio label 3</span>
-                <input type="radio" name="radio">
-              </label>
-              <label>
-                <span>Radio label 3</span>
-                <input type="radio" name="radio">
-              </label>
+            <aside>Nulla vitae elit libero, a pharetra augue.</aside>
 
-              <div class="action">
-                <input class="btn" type="submit">
-              </div>
+            <p>Cras mattis consectetur purus sit amet fermentum. Donec sed odio dui. Maecenas sed diam eget risus varius blandit sit amet non magna. Aenean   lacinia bibendum nulla sed consectetur. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Nullam quis risus eget urna mollis   ornare vel eu leo.</p>
+
+            <img class="pull-left" src="http://placekitten.com/g/100/120">
+
+            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut   fermentum massa justo sit amet risus. Nullam quis risus eget urna mollis ornare vel eu leo. Lorem ipsum dolor sit amet, consectetur adipiscing  elit. Donec ullamcorper nulla non metus auctor fringilla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent commodo cursus magna,  vel scelerisque nisl consectetur et.</p>
+
+
+            <form action="/" class="inverted">
+               <fieldset>
+                <legend class="h2">Lorem ipsum</legend>
+                <label>
+                  <span>A label</span>
+                  <input type="text">
+                </label>
+                <label>
+                  <span>A second label</span>
+                  <input type="text">
+                </label>
+                <label>
+                  <span>A third label</span>
+                  <input type="text">
+                </label>
+                <div class="action">
+                  <input class="btn" type="submit">
+                </div>
+              </fieldset>
             </form>
+
+            <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nullam quis risus eget urna mollis ornare vel eu leo. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Donec sed odio dui. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cras mattis consectetur purus sit amet fermentum.</p>
+
+            <aside class="pull-left">
+               <ul>
+                <li>Vestibulum Inceptos Dolor Quam</li>
+                <li>Magna Lorem Vestibulum Nullam</li>
+                <li>Tristique Nullam Cras Dapibus</li>
+              </ul>
+            </aside>
+
+            <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec ullamcorper nulla non metus auctor fringilla. Maecenas faucibus mollis interdum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec ullamcorper nulla non metus auctor fringilla. Nullam id dolor id nibh ultricies vehicula ut id elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+
+            <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Aenean lacinia bibendum nulla sed consectetur. Nullam quis risus eget urna mollis ornare vel eu leo. Sed posuere consectetur est at lobortis. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Etiam porta sem malesuada magna mollis euismod.</p>
+
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <script src="javascripts/scale.fix.js"></script>
-    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js'></script>
-    <script>
-      $(document).ready(function () {
-        // Hide messages on click
-        $('.messages span').click(function() { $(this).parent().slideUp(); })
+      <section class="form">
 
-        $('body > section').hide();
-        $('.'+$('.js-nav .active').attr('id')).show();
+        <ul class="messages">
+          <li class="message"><p>Nullam id dolor id nibh ultricies vehicula ut id elit.</p><span>x</span></li>
+          <li class="notice"><p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p><span>x</span></li>
+          <li class="alert"><p>Sed posuere consectetur est at lobortis.</p><span>x</span></li>
+        </ul>
 
-        $('.js-nav li').click(function () {
-          $('.active').removeClass('active');
-          $(this).addClass('active');
-          $('body > section').hide ();
-          $('.'+$(this).attr('id')).show();
-        });
+        <form action="/">
+          <label>
+            <span>Text label</span>
+            <input type="text">
+          </label>
+          <label>
+            <span>Select label</span>
+            <select>
+              <option>Option</option>
+              <option>Option two</option>
+            </select>
+          </label>
+          <label>
+            <span>Checkbox label</span>
+            <input type="checkbox">
+          </label>
+          <label>
+            <span>Radio label 1</span>
+            <input type="radio" name="radio">
+          </label>
+          <label>
+            <span>Radio label 3</span>
+            <input type="radio" name="radio">
+          </label>
+          <label>
+            <span>Radio label 3</span>
+            <input type="radio" name="radio">
+          </label>
+
+          <div class="action">
+            <input class="btn" type="submit">
+          </div>
+        </form>
+      </section>
+    </div>
+  </div>
+
+  <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js'></script>
+  <script>
+    $(document).ready(function () {
+      // Hide messages on click
+      $('.messages span').click(function() { $(this).parent().slideUp(); })
+
+      $('.container > section').hide();
+      $('.'+$('.js-nav .active').attr('id')).show();
+
+      $('.js-nav li').click(function () {
+        $('.active').removeClass('active');
+        $(this).addClass('active');
+        $('.container > section').hide ();
+        $('.'+$(this).attr('id')).show();
       });
-    </script>
-  </body>
+    });
+  </script>
+</body>
 </html>
